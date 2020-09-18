@@ -1,10 +1,10 @@
-# Predicting-University-Admissions
-**Task Details**
+# US Police Shootings
+**Content**
 
-Using the supplied predictive variables (GRE score, TOEFL score, University Rating, etc) to predict the likelihood of admission of a new candidate.
+It contains basic data about people like their name, age, gender and race. 
+Along with it, is the shooting/killing information, like date of event, where it happened? How they were shot? 
+Did they attack? Were they holding weapons? Did they show any mental illness? Was the policeman wearing a camera/was the incident recorded? 
+Did the suspect flee? 
+Apart from that, a category column holds type of weapon used by the suspect
 
-**Evaluation Criteria**
-
-The best model should be the one that evaluates to have the lowest RMSE overall, and please indicate the error you get on validation set containing the last 100 observations.
-
-[Here is a link to the dataset](https://www.kaggle.com/mohansacharya/graduate-admissions/tasks?taskId=6)
+[Here is a link to the dataset](https://www.kaggle.com/ahsen1330/us-police-shootings)
