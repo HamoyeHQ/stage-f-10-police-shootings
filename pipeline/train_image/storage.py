@@ -22,25 +22,27 @@ class Storage(object):
         logging.info(f'successfully copied {uri} to {out_dir}')
         return out_dir
     
-    @classmethod
+  
+    @classmethod    
     def _upload_gcs(cls, uri: str, out_dir: str):
         try:
-            storage_client = storage.Client()
+            client = storage.Client()
         except exceptions.DefaultCredentialsError:
-            storage_client = storage.Client().create_anonymous_client()
-            
+            client = storage.Client().create_anonymous_client()
+           
         bucket_args = out_dir.replace(_GCS_PREFIX, "", 1).split("/", 1)
         logging.info(f"Bucket arguments: {bucket_args}")
         bucket_name = bucket_args[0]
+        logging.info(f"Bucket name: {bucket_name}")
         gcs_path = bucket_args[1] if len(bucket_args) else ""
-        bucket = storage_client.bucket(bucket_name)
+        bucket = client.bucket(bucket_name)
         cls.upload_local_directory_to_gcs(uri, bucket, gcs_path)
         
         
     @classmethod
-    def upload_local_directory_to_gcs(uri, bucket, gcs_path):
+    def upload_local_directory_to_gcs(cls, local_path, bucket, gcs_path):
         assert os.path.isdir(local_path)
-        for local_file in glob.glob(local_path + '/**'):
+        for local_file in glob.glob(f'{local_path}/**'):
             if not os.path.isfile(local_file):
                 cls.upload_local_directory_to_gcs(local_file, bucket, f'{gcs_path}/{os.path.basename(local_file)}')
                 
@@ -49,4 +51,16 @@ class Storage(object):
                 logging.info(f"Remote path: {remote_path}")
                 blob = bucket.blob(remote_path)
                 blob.upload_from_filename(local_file)
+                
+    @staticmethod      
+    def download(file, path, gcs_bucket):
+        client = storage.Client()
+        bucket = client.get_bucket(gcs_bucket)
+        try:
+            blob = storage.Blob(f'{path}/{file}', bucket)
+            with open(file) as file_obj:
+                client.download_blob_to_file(blob, file_obj)
+        except:
+            raise Execption("File name or path is invalid")
+        
     
