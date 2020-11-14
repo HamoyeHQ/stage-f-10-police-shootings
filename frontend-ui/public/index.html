@@ -1,36 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="./css/styles.css">
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <!-- <script src="/__/firebase/8.0.1/firebase-app.js"></script> -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="./css/styles.css">
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <!-- <script src="/__/firebase/8.0.1/firebase-app.js"></script> -->
 
-    <!-- TODO: Add SDKs for Firebase products that you want to use
+  <!-- TODO: Add SDKs for Firebase products that you want to use
         https://firebase.google.com/docs/web/setup#available-libraries -->
-    <script src="/__/firebase/8.0.1/firebase-analytics.js"></script>
+  <script src="/__/firebase/8.0.1/firebase-analytics.js"></script>
 
-    <!-- Initialize Firebase -->
-    <script src="/__/firebase/init.js"></script>
-    <title>Home Page</title>
+  <!-- Initialize Firebase -->
+  <script src="/__/firebase/init.js"></script>
+  <title>Home Page</title>
 </head>
-<body>
-    <nav>
-        <div class="nav-wrapper blue">
-          <a href="#!" class="brand-logo center">Police Shootings Open Source Project</a>
-          <ul class="left hide-on-med-and-down">
-            <li class="active pulse"><a href="#">Description</a></li>
-            <li><a href="./html/team-members.html">Team Members</a></li>
-            <li><a href="./html/model.html">Use Model</a></li>
-          </ul>
-        </div>
-      </nav>
 
-    <div class="content">
-      <h1>Work In progress...</h1>
-      <h3>Here we can give a brief description of the project</h3>
+<body>
+  <nav>
+    <div class="nav-wrapper blue">
+      <a href="#!" class="brand-logo center">Police Shootings Open Source Project</a>
+      <ul class="left hide-on-med-and-down">
+        <li class="active pulse"><a href="#">Description</a></li>
+        <li><a href="./html/team-members.html">Team Members</a></li>
+        <li><a href="./html/model.html">Use Model</a></li>
+      </ul>
     </div>
+  </nav>
+
+  <div class="content">
+    <div class="text" style="text-align: center">
+      <h4><b>Project Description</b></h4>
+    </div>
+    <div class="card-panel">
+      <div class="text">
+        <p><b>In</b> recent years, there have been numerous cases involving the fatal shooting of Black Americans by the
+          police. In majority of these cases, the police officers involved in the shooting were let off with a slap on
+          the wrist leaving the victims’ families unsatisfied with the ruling.
+
+          Based on this, we decided to conduct an analysis of police shooting incidents in America from 2015 to date, to
+          ascertain if the shootings were justified in a bid to help victims and their families seeking justice to get
+          it. To achieve this, we performed clustering technique on our data to discover patterns about police shootings
+          that could help the victims and their families in their lawsuit against the police.
+          Based on this, we decided to conduct an analysis of police shooting incidents in America from 2015 to date, to
+          ascertain if the shootings were justified in a bid to help victims and their families seeking justice to get
+          it. To achieve this, we used a supervised learning algorithm to predict the probability of a gunshot being
+          ruled as unjustified. Cases with probabilities equal to or higher than 60% are most likely unjust. Hence, this
+          approach could help the victims, their families as well as NGOs, in their lawsuit against accused police
+          officer(s).
+
+          The ‘shooting’ dataset contains data about people that have been shot and killed by the police from 2015 to
+          2020 such as their name, age, gender and race. Additionally, information is provided about their date of
+          shooting and where it happened, their mental state, if they posed any threat, if they had any weapon on them
+          and if the police was wearing a body camera. [You can access the dataset through this
+          link](https://www.kaggle.com/ahsen1330/us-police-shootings).
+        </p>
+      </div>
+      <style type="text/css">
+        div.box {
+          text-align: center;
+
+        }
+      </style>
+    </div>
+    <div class="box">
+      <img src="C:\Users\CHIMEZIE AZIH\police hamoye\stage-f-10-police-shootings\frontend-ui\public\police.jpg"
+        alt="Police car" style="width: 300px;height: 200px">
+    </div>
+    <p>
+    <footer style="text-align: center"> Copyright &copy; Police Shootings Hamoye Project Group</footer>
+    </p>
 </body>
+
 </html>
