@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,26 +11,142 @@
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <!-- <script src="/__/firebase/8.0.1/firebase-app.js"></script> -->
 
-    <!-- TODO: Add SDKs for Firebase products that you want to use
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
         https://firebase.google.com/docs/web/setup#available-libraries -->
-    <script src="/__/firebase/8.0.1/firebase-analytics.js"></script>
+  <script src="/__/firebase/8.0.1/firebase-analytics.js"></script>
 
-    <!-- Initialize Firebase -->
-    <script src="/__/firebase/init.js"></script>
-    <title>Use Model</title>
+  <!-- Initialize Firebase -->
+  <script src="/__/firebase/init.js"></script>
+  <title>Use Model</title>
 </head>
-<body>
-    <nav>
-        <div class="nav-wrapper blue">
-          <a href="#!" class="brand-logo center">Police Shootings Open Source Project</a>
-          <ul class="left hide-on-med-and-down">
-            <li><a href="../index.html">Description</a></li>
-            <li><a href="./team-members.html">Team Members</a></li>
-            <li class="active pulse"><a href="./model.html">Use Model</a></li>
-          </ul>
-        </div>
-      </nav>
 
+<body>
+  <nav>
+    <div class="nav-wrapper blue">
+      <a href="#!" class="brand-logo center">Police Shootings Open Source Project</a>
+      <ul class="left hide-on-med-and-down">
+        <li><a href="../index.html">Description</a></li>
+        <li><a href="./team-members.html">Team Members</a></li>
+        <li class="active pulse"><a href="./model.html">Use Model</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <div class="content">
+    <h1>Data Collection and Model Prediction</h1>
+    <p>
+    <h4>Provide the required features for prediction by filling the relevant fields</h4>
+    </p>
+    <p>
+    <div class="card-panel">
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s6">
+              <input placeholder="Type Name" id="first_name" type="number" class="validate">
+              <label for="first_name" class="active">First Name</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="age" type="number" class="validate">
+              <label for="age" class="active">Age</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <input placeholder="" id="manner_of_death" type="text" class="validate">
+              <label for="manner_of_death" class="active">Manner_of_Death</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="armed" type="text" class="validate">
+              <label for="armed" class="active">Armed</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="gender" type="text" class="validate">
+              <label for="gender" class="active">Gender</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="race" type="text" class="validate">
+              <label for="race" class="active">Race</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="city" type="text" class="validate">
+              <label for="city" class="active">City</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="state" type="text" class="validate">
+              <label for="state" class="active">State</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="signs_of_mental_illness" type="text" class="validate">
+              <label for="signs_of_mental_illness" class="active">Signs_of_Mental_Illness</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="threat_level" type="text" class="validate">
+              <label for="threat_level" class="active">Threat_level</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="flee" type="text" class="validate">
+              <label for="flee" class="active">Flee</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="body_camera" type="text" class="validate">
+              <label for="body_camera" class="active">Body_Camera</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="arms_category" type="text" class="validate">
+              <label for="arms_category" class="active">Arms_Category</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="day" type="text" class="validate">
+              <label for="day" class="active">Day:</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="month" type="text" class="validate">
+              <label for="month" class="active">Month:</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="year" type="text" class="validate">
+              <label for="year" class="active">Year:</label>
+            </div>
+          </div>
+          <div>
+            <input type="submit" value="Predict" class="btn right">
+            <div class="clearfix"></div>
+          </div>
+        </form>
+      </div>
+    </div>
+    </p>
     <div class="content">
         <h1>Work In progress...</h1>
         <h4>This page will contain the form to collect information that will be sent to the endpoint for prediction.
@@ -38,7 +155,35 @@
         </h4>
         <h2> Submit the form below to predict if the police shooting is justified </h2>
 
+
+    <p>
+    <div>
+      <h4>Submit your CSV files here</h4>
+      <h6>Only make submission if file contains the information requested above.</h6>
     </div>
+
+    </p>
+    <div class="card-panel">
+      <form action="#">
+        <div class="file-field input-field">
+          <div class="btn">
+            <span>File</span>
+            <input type="file">
+          </div>
+          <div class="file-path-wrapper">
+            <input class="file-path validate" type="text" placeholder="Click to Upload file">
+          </div>
+        </div>
+        <div>
+          <input type="submit" value="Predict" class="btn right">
+          <div class="clearfix"></div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <p>
+  <footer style="text-align: center"> Copyright &copy; Police Shootings Hamoye Project Group</footer>
+  </p>
 
     <div class="container">
         <form class="well form-horizontal" action="#" method="post"  id="contact_form">
@@ -107,4 +252,5 @@
     </div>
     </div>
 </body>
+
 </html>
