@@ -2,13 +2,15 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <link rel="stylesheet" href="../css/styles.css">
-  <!-- The core Firebase JS SDK is always required and must be listed first -->
-  <!-- <script src="/__/firebase/8.0.1/firebase-app.js"></script> -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <!-- <script src="/__/firebase/8.0.1/firebase-app.js"></script> -->
+
 
   <!-- TODO: Add SDKs for Firebase products that you want to use
         https://firebase.google.com/docs/web/setup#available-libraries -->
@@ -30,6 +32,7 @@
       </ul>
     </div>
   </nav>
+
 
   <div class="content">
     <h1>Data Collection and Model Prediction</h1>
@@ -144,12 +147,21 @@
       </div>
     </div>
     </p>
+    <div class="content">
+        <h1>Work In progress...</h1>
+        <h4>This page will contain the form to collect information that will be sent to the endpoint for prediction.
+            We'll also create an option to upload a file to the endpoint. If the file contains valid features, the model will generate a prediction
+            for all observations in the file.
+        </h4>
+        <h2> Submit the form below to predict if the police shooting is justified </h2>
+
 
     <p>
     <div>
       <h4>Submit your CSV files here</h4>
       <h6>Only make submission if file contains the information requested above.</h6>
     </div>
+
     </p>
     <div class="card-panel">
       <form action="#">
@@ -172,6 +184,73 @@
   <p>
   <footer style="text-align: center"> Copyright &copy; Police Shootings Hamoye Project Group</footer>
   </p>
+
+    <div class="container">
+        <form class="well form-horizontal" action="#" method="post"  id="contact_form">
+            <fieldset>
+
+<!-- Form Name -->
+                <legend><center><h2><b>Police Shooting Prediction</b></h2></center></legend><br>
+
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <span class = "name"> Name: </span>
+                        <input type = "text" name = "name" placeholder = "Victim's name"/><br/>
+
+                        <span class = "name"> Manner of death: </span>
+                        <input type = "text" name = "manner_of_death" placeholder = "Manner of death"/><br/>
+
+                        <span class = "arms"> Arms category: </span>
+                        <select class="form-control" id="exampleSelect1">
+                            <option>Arms Category</option>
+                            <option>Blunt Instruments</option>
+                            <option>Electrical devices</option>
+                            <option>Explosives</option>
+                            <option>Guns</option>
+                            <option>Hand tools</option>
+                            <option>Multiple</option>
+                            <option>Other unusual objects</option>
+                            <option>Piercing objects</option>
+                            <option>Sharp objects</option>
+                            <option>Unarmed</option>
+                            <option>Unknown</option>
+                            <option>Vehicles</option>
+                        </select><br>
+
+                        <span class = "mental_illness"> Mental illness: </span>
+                        <select class="form-control" id="exampleSelect2">
+                            <option></option>
+                            <option>True</option>
+                            <option>False</option>
+                        </select><br>
+
+                        <span class = "race"> Race: </span>
+                        <select class="form-control" id="exampleSelect3">
+                            <option>Select Race</option>
+                            <option>Asian</option>
+                            <option>Black</option>
+                            <option>Hispanic</option>
+                            <option>Native</option>
+                            <option>White</option>
+                            <option>Other</option>
+                        </select><br>
+
+                        <div class="form-group">
+                            <span class="file"> Input File </span>
+                            <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+                            <small id="fileHelp" class="form-text text-muted">Enter a csv file only</small>
+                        </div>
+
+                        <button class="btn btn-success" type = "submit"> Predict </button>
+                        <button class="btn btn-warning" type = "reset"> Reset </button>
+                          </div>
+                    </div>
+
+
+            </fieldset>
+        </form>
+    </div>
+    </div>
 </body>
 
 </html>
