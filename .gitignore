@@ -66,3 +66,6 @@ node_modules/
 .env
 .vscode
 .ipynb_checkpoints
+
+venv/
+__pycache__
