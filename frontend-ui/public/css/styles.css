@@ -47,3 +47,21 @@ h2{
 .box{
     text-align: center;
 }
+
+.wrap {
+  width: 1000px;
+  margin: auto;
+  margin-top: 50px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6);
+  transition: 0.4s;
+  width: 300px;
+  background: #fff;
+  text-align: center;
+  font-size: 16px;
+  font-family: sans-serif;
+  float: left;
+  margin: 10px;
+}

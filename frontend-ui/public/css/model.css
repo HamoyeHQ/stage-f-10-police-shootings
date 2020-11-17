@@ -1,0 +1,14 @@
+.result {
+    background-color: red;
+    width: 40%;
+}
+
+.model {
+    display: flex;
+    flex-direction: row;
+    /* width: 40%; */
+}
+
+#form {
+    width: 60%;
+}
