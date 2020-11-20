@@ -1,14 +1,23 @@
 .result {
-    background-color: red;
-    width: 40%;
+    /* background-color: red; */
+    /* width: 20%; */
+    margin-top: 5%;
 }
 
 .model {
     display: flex;
     flex-direction: row;
-    /* width: 40%; */
+    justify-content: center;
 }
 
 #form {
-    width: 60%;
+    width: 70%;
+}
+
+.red {
+    background-color: red;
+}
+
+.blue {
+    color: aqua;
 }

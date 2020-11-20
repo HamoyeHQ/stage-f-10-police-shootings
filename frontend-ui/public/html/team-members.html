@@ -1,162 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <!-- <script src="/__/firebase/8.0.1/firebase-app.js"></script> -->
 
-<head>
-
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <link rel="stylesheet" href="../css/styles.css">
-  <!-- The core Firebase JS SDK is always required and must be listed first -->
-  <!-- <script src="/__/firebase/8.0.1/firebase-app.js"></script> -->
-
-  <!-- TODO: Add SDKs for Firebase products that you want to use
+    <!-- TODO: Add SDKs for Firebase products that you want to use
         https://firebase.google.com/docs/web/setup#available-libraries -->
-  <script src="/__/firebase/8.0.1/firebase-analytics.js"></script>
+    <!-- <script src="/__/firebase/8.0.1/firebase-analytics.js"></script> -->
 
 
-  <!-- Initialize Firebase -->
-  <script src="/__/firebase/init.js"></script>
-  <title>Members</title>
-</head>
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-storage.js"></script>
 
-<body>
-  <nav>
-    <div class="nav-wrapper blue">
-      <a href="#!" class="brand-logo center">Police Shootings Open Source Project</a>
-      <ul class="left hide-on-med-and-down">
-        <li><a href="../index.html">Description</a></li>
-        <li class="active pulse"><a href="./team-members.html">Team Members</a></li>
-        <li><a href="./model.html">Use Model</a></li>
-      </ul>
-    </div>
-  </nav>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-analytics.js"></script>
+    <title>Members</title>
+  </head>
 
+  <body>
+    <nav>
+      <div class="nav-wrapper blue">
+        <a href="#!" class="brand-logo center"
+          >Police Shootings Open Source Project</a
+        >
+        <ul class="left hide-on-med-and-down">
+          <li><a href="../index.html">Description</a></li>
+          <li class="active pulse">
+            <a href="./team-members.html">Team Members</a>
+          </li>
+          <li><a href="./model.html">Use Model</a></li>
+        </ul>
+      </div>
+    </nav>
 
-  <div class="content">
+    <div class="content">
+      <div class="text" style="text-align: center">
+        <h4><b>Team Members</b></h4>
+      </div>
 
-    <div class="text" style="text-align: center">
-      <h4><b>Team Members</b></h4>
-    </div>
+      <div id="modal-add-member" class="modal">
+        <div class="modal-content">
+          <h4>Add Contributor</h4><br />
+          <form id="add-member-form" class="col s12">
+            <div class="row">
+              <div class="input-field col s6">
+                <input id="first_name" type="text" class="validate" required />
+                <label for="first_name">First Name</label>
+              </div>
+              <div class="input-field col s6">
+                <input id="last_name" type="text" class="validate" required />
+                <label for="last_name">Last Name</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s6">
+                <input id="hamoye" type="text" class="validate" required />
+                <label for="hamoye">Hamoye ID</label>
+              </div>
+              <div class="input-field col s6">
+                <input id="track" type="text" class="validate" required />
+                <label for="track">Hamoye Track</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="email" type="email" class="validate" required />
+                <label for="email">Email</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="linkedin" type="text" class="validate" />
+                <label for="linkedin">LinkedIn URL</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s6">
+                <input id="github" type="text" class="validate" required />
+                <label for="github">Link to Github Repo</label>
+              </div>
+              <div class="input-field col s6">
+                <input id="twitter" type="text" class="validate" />
+                <label for="twitter">Twitter ID</label>
+              </div>
 
-    <div class="wrap">
-      <p>
-        <div class="card">
-          <img src="../images/police.jpg"
-            alt="Police car" style="width:100%">
-          <div class="container">
-            <h5><b>Oluwasayo Akinkunmi</b></h5>
-            <p>
-              <h7>Data Engineering Track </h7>
-            </p>
-          </div>
-        </div>
-      </p>
-    </div>
+            </div>
+            <div class="file-field input-field">
+              <div class="btn">
+                <span>Select an Image</span>
+                <input type="file" id="file" />
+              </div>
+              <div class="file-path-wrapper">
+                <input class="file-path validate" required type="text" />
+              </div>
+            </div>
 
-      <p>
-    <div class="wrap">
-      <div class="card">
-        <img
-          src="../images/Nationalholidaylist.com.jpg"
-          alt="Police car" style="width:100%">
-        <div class="container">
-          <h5><b>Opeyemi Ajala</b></h5>
-          <p>
-            <h7>Data Engineering</h7>
-          </p>
+            <button class="btn yellow darken-2 z-depth-0" id="upload">Add Member</button>
+            <button class="btn yellow darken-2 z-depth-0" id="close">Exit</button>
+          </form>
         </div>
       </div>
 
+      <div class="container" id="members">
+        <!-- <a href="#" class="grey-text modal-trigger" data-target="modal-signup">Sign up</a> -->
+        <a class="btn-floating btn-large waves-effect waves-light red modal-trigger" data-target="modal-add-member" href="#modal-add-member"><i class="material-icons">add</i></a>
+        <ul class="collapsible z-depth-0 guides" style="border: none;">
+          
+        </ul>
+        <div id="members-card">
 
-    </p>
-
-    <p>
-    <div class="wrap">
-
-      <div class="card">
-        <img src="C:\Users\CHIMEZIE AZIH\police hamoye\stage-f-10-police-shootings\frontend-ui\public\police.jpg"
-          alt="Police car" style="width:100%">
-        <div class="container">
-          <h5><b>Chimezie Azih</b></h5>
-          <p>
-            <h7>Data Science Track </h7>
-          </p>
         </div>
       </div>
-    </div>
-    </p>
-
-    <p>
-    <div class="wrap">
-
-      <div class="card">
-        <img src="C:\Users\CHIMEZIE AZIH\police hamoye\stage-f-10-police-shootings\frontend-ui\public\police.jpg"
-          alt="Police car" style="width:100%">
-        <div class="container">
-          <h5><b>Chimezie Azih</b></h5>
-          <p>
-            <h7>Data Science Track </h7>
-          </p>
-        </div>
-      </div>
-    </div>
-    </p>
-
-    <p>
-    <div class="wrap">
-
-      <div class="card">
-        <img src="C:\Users\CHIMEZIE AZIH\police hamoye\stage-f-10-police-shootings\frontend-ui\public\police.jpg"
-          alt="Police car" style="width:100%">
-        <div class="container">
-          <h5><b>Chimezie Azih</b></h5>
-          <p>
-            <h7>Data Science Track </h7>
-          </p>
-        </div>
-      </div>
-    </div>
-    </p>
-
-    <p>
-    <div class="wrap">
-
-      <div class="card">
-        <img src="C:\Users\CHIMEZIE AZIH\police hamoye\stage-f-10-police-shootings\frontend-ui\public\police.jpg"
-          alt="Police car" style="width:100%">
-        <div class="container">
-          <h5><b>Chimezie Azih</b></h5>
-          <p>
-            <h7>Data Science Track </h7>
-          </p>
-        </div>
-      </div>
-    </div>
-    </p>
-  </div>
-
-  <div class="content">
-
-    <!-- Slider BODY section -->
-    <div id="wowslider-container1">
-    <div class="ws_images"><ul>
-            <li><img src="data1/images/BQ7kQXIDzdm.jpg" alt="Oluwasayo Akinkunmi" title="Oluwasayo Akinkunmi <br> Project Lead" id="wows1_0"/></li>
-            <li><img src="data1/images/IMG-20191018-WA0068.jpg" alt="Opeyemi Ajala" title="Opeyemi Ajala <br> Asst. Project Lead" id="wows1_1"/></li>
-            <li><img src="#" alt="Triumph Ogeh" title="Triumph Ogeh <br> Query Analyst" id="wows1_2"/></li>
-        </ul></div>
-        <div class="ws_bullets"><div>
-            <a href="#" title="IMG-20191018-WA0068"><span><img src="data1/tooltips/IMG-20191018-WA0068.jpg" alt="Opeyemi Ajala"/>1</span></a>
-            <a href="#" title="#"><span><img src="#" alt="Oluwasayo Akinkunmi"/>2</span></a>
-            <a href="#" title="#"><span><img src="#" alt="Triumph Ogeh"/>3</span></a>
-        </div></div><div class="ws_script" style="position:absolute;left:-99%"><a href="http://wowslider.net">wow slider</a> by WOWSlider.com v8.8</div>
-    <div class="ws_shadow"></div>
-    </div>
-    <script type="text/javascript" src="engine1/wowslider.js"></script>
-    <script type="text/javascript" src="engine1/script.js"></script>
-<!-- End SliderBODY section -->
-
-</div>
-</body>
-
+    <script src="../js/app.js"></script>
+  </body>
 </html>
