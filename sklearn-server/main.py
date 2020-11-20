@@ -1,6 +1,5 @@
 import numpy as np
 import pandas as pd
-from google.cloud import storage
 from utils import transform, postprocess, predict
 from flask import jsonify, request, Flask
 import joblib
@@ -20,9 +19,9 @@ def lrc_model(request):
     if request.method == 'OPTIONS':
         
         headers = {
-            'Access-Control-Allow-Origin': 'http://localhost:5000',
+            'Access-Control-Allow-Origin': '*',
             'Access-Control-Allow-Methods': 'POST',
-            'Access-Control-Allow-Credentials': 'true'
+            'Access-Control-Allow-Credentials': 'true',
             'Access-Control-Allow-Headers': 'Content-Type',
             'Access-Control-Max-Age': '3600'
         }
@@ -38,12 +37,12 @@ def lrc_model(request):
         result = postprocess(predictions)
         
         headers = {
-            'Access-Control-Allow-Origin': 'http://localhost:5000',
+            'Access-Control-Allow-Origin': '*',
             # 'Access-Control-Allow-Methods': 'POST',
             # 'Access-Control-Allow-Headers': 'Content-Type',
             'Access-Control-Allow-Credentials': 'true'
             # 'Access-Control-Max-Age': '3600'
             
         }
-        return (jsonify({"predictions": result}),  200,  headers)
+        return (jsonify({"predictions": result, "probabilities": predictions}), 200,  headers)
 
