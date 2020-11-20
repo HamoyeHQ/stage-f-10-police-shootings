@@ -1,42 +1,42 @@
 #success_message{ display: none;}
 
-.content{
+/* .content{
     padding: 0 5%;
     
-}
+} */
   /* label color */
-  .input-field label {
+  /* .input-field label {
     color: #000;
-  }
+  } */
   /* label focus color */
-  .input-field input[type=text]:focus + label {
+  /* .input-field input[type=text]:focus + label {
     color: #000;
-  }
+  } */
   /* label underline focus color */
-  .input-field input[type=text]:focus {
+  /* .input-field input[type=text]:focus {
     border-bottom: 1px solid #000;
     box-shadow: 0 1px 0 0 #000;
-  }
+  } */
   /* valid color */
-  .input-field input[type=text].valid {
+  /* .input-field input[type=text].valid {
     border-bottom: 1px solid #000;
     box-shadow: 0 1px 0 0 #000;
-  }
+  } */
   /* invalid color */
-  .input-field input[type=text].invalid {
+  /* .input-field input[type=text].invalid {
     border-bottom: 1px solid #000;
     box-shadow: 0 1px 0 0 #000;
-  }
+  } */
   /* icon prefix focus color */
-  .input-field .prefix.active {
+  /* .input-field .prefix.active {
     color: #000;
-  }
+  } */
 
 body{
     margin: 0;
     padding: 0;
     font-family: Century Gothic;
-    background-image: url(police.jpg)no-repeat;
+    /* background-image: url(police.jpg)no-repeat; */
     background-clip: cover;
     background-position: center;
 
@@ -46,4 +46,37 @@ h2{
 }
 .box{
     text-align: center;
+}
+
+.wrap {
+  width: 1000px;
+  margin: auto;
+  margin-top: 50px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6);
+  transition: 0.4s;
+  width: 300px;
+  background: #fff;
+  text-align: center;
+  font-size: 16px;
+  font-family: sans-serif;
+  float: left;
+  margin: 10px;
+}
+
+/* .text {
+  width: 80%;
+} */
+
+
+div > p {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.profile-image {
+  height: 250px;
+  /* width: auto; */
+  object-fit: fill;
 }
